@@ -51,5 +51,13 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export EDITOR='vim'
+
+alias be="bundle exec"
+alias mux="tmuxinator"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 source $ZSH/oh-my-zsh.sh
-source $HOME/.zshenv
