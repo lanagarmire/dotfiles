@@ -3,3 +3,5 @@ name = Milovan Zogovic
 email = milovan.zogovic@gmail.com 
 [push]
 	default = simple
+[core]
+	excludesfile = /Users/zoga/.gitignore_global
