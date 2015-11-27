@@ -1,0 +1,27 @@
+alias be 'bundle exec'
+alias start_memcached 'memcached -d'
+alias start_mongodb 'mongod'
+alias start_mysql 'mysql.server start'
+alias start_pg 'pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias stop_pg 'pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
+alias start_rabbitmq 'rabbitmq-server'
+alias start_redis 'redis-server /usr/local/etc/redis.conf'
+alias start_dynamo 'dynamodb-local'
+alias start_s3 'fakes3 -r /tmp/fakes3_root -p 4567'
+alias web 'serve -p 8080'
+alias vi 'vim'
+
+alias show_hidden_files 'defaults write com.apple.finder AppleShowAllFiles YES'
+alias hide_hidden_files 'defaults write com.apple.finder AppleShowAllFiles NO'
+
+function pman
+  man -t $argv | open -f -a /Applications/Preview.app
+end
+
+function fish_user_key_bindings
+  fish_vi_key_bindings
+end
+
+rbenv rehash >/dev/null ^&1
+
+eval (direnv hook fish)
