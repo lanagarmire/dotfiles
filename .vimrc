@@ -9,7 +9,6 @@ Plug 'tpope/vim-sensible'
 Plug 'ervandew/supertab'
 Plug 'myusuf3/numbers.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'itspriddle/vim-marked'
 
 " Nav
 Plug 'kien/ctrlp.vim'
@@ -66,7 +65,11 @@ let g:netrw_liststyle=3 " defaulting to tree view
 " Running ruby script and capturing output in buffer
 :command! R let f=expand("%")|vnew|execute '.!ruby "' . f . '"'
 
+" Run the current file cleaning the display first
 nnoremap <F9> :!clear; tmux clear-history; %:p<ENTER>
+
+" Open current file in Marked2
+nnoremap <leader>m :silent !open -a Marked '%:p'<cr>
 
 " NERDTree
 map <leader>ne :NERDTreeToggle<cr>
