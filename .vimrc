@@ -8,6 +8,7 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'ervandew/supertab'
 Plug 'myusuf3/numbers.vim'
+Plug 'ntpeters/vim-better-whitespace'
 
 " Nav
 Plug 'kien/ctrlp.vim'
@@ -22,7 +23,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'rking/ag.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-multiple-cursors'
 
 " Git
@@ -44,7 +45,7 @@ Plug 'leshill/vim-json'
 Plug 'othree/html5.vim'
 "   Others
 Plug 'hail2u/vim-css3-syntax'
-Plug 'cakebaker/scss-syntax.vim' 
+Plug 'cakebaker/scss-syntax.vim'
 Plug 'chrisbra/csv.vim'
 
 call plug#end()
@@ -60,15 +61,16 @@ set hidden " allowing files with pending changes
 
 " Built-in file browser
 let g:netrw_liststyle=3 " defaulting to tree view
-map <leader>ex :Ex<cr>
 
-" Running ruby script
+" Running ruby script and capturing output in buffer
 :command! R let f=expand("%")|vnew|execute '.!ruby "' . f . '"'
 
+nnoremap <F9> :!clear; tmux clear-history; %:p<ENTER>
+
 " NERDTree
-" map <leader>ne :NERDTreeToggle<cr>
-" let NERDTreeShowHidden=1
-" let NERDTreeQuitOnOpen=1
+map <leader>ne :NERDTreeToggle<cr>
+let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen=1
 
 if has("autocmd")
   " autocmd BufEnter * cd %:p:h " Automatically change directory
@@ -101,6 +103,11 @@ nnoremap <F3> :NumbersToggle<CR>
 if !has("gui_running")
   " set term=xterm-256color
 endif
+
+" Whitespace
+" https://github.com/ntpeters/vim-better-whitespace/issues/40
+autocmd VimEnter * DisableWhitespace
+autocmd VimEnter * EnableWhitespace
 
 syntax enable
 set background=dark
