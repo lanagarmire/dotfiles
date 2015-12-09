@@ -16,7 +16,7 @@ function doIt() {
   ln -sf ${BASEDIR}/.vimrc ~/.vimrc
 
   source ~/.bashrc
-  tmux-source ~/.tmux.conf
+  tmux source ~/.tmux.conf
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
