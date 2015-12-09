@@ -9,6 +9,7 @@ Plug 'tpope/vim-sensible'
 Plug 'ervandew/supertab'
 Plug 'myusuf3/numbers.vim'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'itspriddle/vim-marked'
 
 " Nav
 Plug 'kien/ctrlp.vim'
