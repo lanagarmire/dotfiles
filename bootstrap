@@ -1,13 +1,22 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "${BASH_SOURCE}")";
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-git pull origin master;
+git pull origin master
 
 function doIt() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap" --exclude "*.swp"\
-		--exclude "README.md" --exclude "LICENSE-MIT.txt" -avh --no-perms . ~;
-  source ~/.bashrc;
+  ln -sf ${BASEDIR}/.bashrc ~/.bashrc
+  ln -sf ${BASEDIR}/.fishrc ~/.fishrc
+  ln -sf ${BASEDIR}/.gemrc ~/.gemrc
+  ln -sf ${BASEDIR}/.gitconfig ~/.gitconfig
+  ln -sf ${BASEDIR}/.gitignore_global ~/.gitignore_global
+  ln -sf ${BASEDIR}/.irbrc ~/.irbrc
+  ln -sf ${BASEDIR}/.railsrc ~/.railsrc
+  ln -sf ${BASEDIR}/.tmux.conf ~/.tmux.conf
+  ln -sf ${BASEDIR}/.vimrc ~/.vimrc
+
+  source ~/.bashrc
+  tmux-source ~/.tmux.conf
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
