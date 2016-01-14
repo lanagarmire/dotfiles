@@ -23,6 +23,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'rking/ag.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 " Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-multiple-cursors'
 
