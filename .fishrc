@@ -25,6 +25,9 @@ alias start_s3 'fakes3 -r /tmp/fakes3_root -p 4567'
 alias web 'serve -p 8080'
 alias vi 'vim'
 
+alias start_bp_accounts 'cd ~/work/BentPixels/accounts; direnv exec . rails server -p3001'
+alias start_bp_cas 'cd ~/work/BentPixels/mcd-cas; direnv exec . rails server -p3002'
+
 alias show_hidden_files 'defaults write com.apple.finder AppleShowAllFiles YES'
 alias hide_hidden_files 'defaults write com.apple.finder AppleShowAllFiles NO'
 
